@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.imge_bluer_filer {
+  filter: brightness(0.5);
+}
+
+
+a.join_now_links {
+  box-shadow: 0px 5px 10px black;
+  border-radius: 5px;
+}
+
+.hover:scale-105 {
+  transform: scale(1.05);
+}
+
+.NeelimaTarot_img {
+  box-shadow: -11px 9px 5px pink;
+}
+
+.card-container {
+  position: relative;
+  display: inline-block;
+  padding: 4px;
+  background: transparent;
+  border-radius: 10px;
+
+}
+
+.card-container:hover {
+
+  box-shadow: 0px 7px 15px darkred;
+}
+
+.card-container .border-animation {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  border-radius: 15px;
+  pointer-events: none;
+  z-index: 0;
+  border: 3px solid transparent;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.card-container:hover .border-animation {
+  opacity: 1;
+  transform: scale(1);
+  background: linear-gradient(270deg, #9B1815, #D1B1C8, #D62A26, #ff00ff);
+  background-size: 400% 400%;
+  animation: rotate-border 3s linear infinite;
+}
+
+@keyframes rotate-border {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+
+.navbar {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  background-color: transparent;
+  transform: translateY(0);
+}
+
+.navbar ul li {
+  color: #D1B1C8;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background-color: white;
+  z-index: 99999;
+}
+
+.sticky ul li{
+  color: #D62A26;
+}
+
+.sticky button{
+  color: #D62A26;
+}
+
+.navbar.sticky-enter {
+  transform: translateY(-100%);
+}
+
+.navbar.sticky-enter-active {
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar.sticky-exit {
+  transform: translateY(0);
+}
+
+.navbar.sticky-exit-active {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+@media only screen and (max-width: 640px) {
+  .navbar ul li {
+    color: #D62A26;
+  }
+}
